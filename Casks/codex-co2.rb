@@ -1,0 +1,32 @@
+cask "codex-co2" do
+  version "0.3.3,10"
+  sha256 "678fa2cab8b71edce0a5e0de3143872cbbdd63eec0919e3ef20f42ecb1b8d65f"
+
+  url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}-preview.#{version.csv.second}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-arm64-preview.dmg"
+  name "Codex Co²"
+  desc "Real-time collaboration for Codex"
+  homepage "https://github.com/SpaceCoder-Kafka/codex-co2"
+
+  livecheck do
+    skip "Preview versions are updated manually"
+  end
+
+  depends_on arch: :arm64
+  depends_on macos: :sequoia
+
+  app "Codex Co².app"
+
+  caveats <<~EOS
+    This experimental preview is ad-hoc signed and not notarized by Apple.
+    Requires macOS 15 or later on Apple Silicon and an already running,
+    compatible official Codex Desktop.
+
+    If macOS blocks the first launch:
+    1. Attempt to open Codex Co² from Applications.
+    2. Open System Settings > Privacy & Security.
+    3. Find Codex Co², choose Open Anyway, and confirm.
+    Only allow the app if you trust its source.
+
+    Before upgrading, stop sharing and quit Codex Co² from its menu bar menu.
+  EOS
+end
