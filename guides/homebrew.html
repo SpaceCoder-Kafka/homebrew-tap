@@ -9,6 +9,10 @@
     * { box-sizing: border-box; }
     body { margin: 0; padding: 48px 22px; line-height: 1.75; }
     main { max-width: 760px; margin: auto; background: #fff; padding: 42px; border: 1px solid #e2e6eb; border-radius: 22px; }
+    .language-switch { display: flex; justify-content: flex-end; gap: 5px; margin-bottom: 22px; }
+    .language-switch button { font: inherit; font-size: 14px; cursor: pointer; border: 1px solid #d7dee8; border-radius: 8px; padding: 6px 13px; background: transparent; color: inherit; }
+    .language-switch button[aria-pressed="true"] { background: #176bdf; border-color: #176bdf; color: #fff; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
     .status { display: inline-block; color: #176544; background: #e6f5ec; padding: 4px 13px; border-radius: 30px; font-size: 14px; font-weight: 600; }
     h1 { margin: 20px 0 6px; font-size: clamp(28px, 5vw, 36px); letter-spacing: -.8px; line-height: 1.3; }
     .intro { margin-top: 10px; color: #586174; }
@@ -20,7 +24,7 @@
     p { margin: 5px 0 10px; }
     .button { display: inline-block; margin-top: 8px; padding: 11px 18px; border-radius: 10px; background: #176bdf; color: #fff; font-weight: 600; text-decoration: none; }
     a { color: #176bdf; text-underline-offset: 3px; }
-    a:focus-visible { outline: 3px solid #83b2f5; outline-offset: 4px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #83b2f5; outline-offset: 4px; }
     .note { color: #586174; font-size: 14px; }
     .trust { padding: 16px 18px; border-radius: 12px; background: #fff6e5; color: #704e12; font-size: 14px; }
     footer { margin-top: 26px; border-top: 1px solid #e2e6eb; padding-top: 18px; }
@@ -28,6 +32,8 @@
     @media (prefers-color-scheme: dark) {
       :root { background: #15191f; color: #e8edf5; }
       main { background: #202630; border-color: #354052; }
+      .language-switch button { border-color: #586174; }
+      .language-switch button[aria-pressed="true"] { border-color: #176bdf; }
       .intro, .note { color: #b7c2d3; }
       .status { background: #173e30; color: #a6e5c0; }
       li::before { background: #354052; }
@@ -40,6 +46,12 @@
 </head>
 <body>
   <main>
+    <div class="language-switch" role="group" aria-label="页面语言 / Page language">
+      <button type="button" lang="zh-CN" data-lang="zh-CN" aria-pressed="true">中文</button>
+      <button type="button" lang="en" data-lang="en" aria-pressed="false">English</button>
+    </div>
+    <p id="language-status" class="sr-only" role="status"></p>
+    <article lang="zh-CN" data-language="zh-CN">
     <span class="status">✓ Homebrew 安装完成</span>
     <h1>接下来，打开 Codex Co²</h1>
     <p class="intro">共享一条 Codex 会话，一起推进工作。</p>
@@ -64,9 +76,70 @@
     <div class="trust">此实验预览版采用临时签名，尚未经过 Apple 公证。只有在你确认来源可信时，才为此应用放行。系统的「仍要打开」和身份验证需要由你亲自完成。<a href="https://support.apple.com/zh-cn/102445">查看 Apple 官方说明</a></div>
     <footer>
       <p class="note">以后更新前，先停止共享，并从 Co² 菜单栏退出应用。</p>
-      <p class="note">Installed with Homebrew — no drag-and-drop step is needed. Open Codex Co² from Applications. If blocked, review System Settings → Privacy &amp; Security → Open Anyway. This preview is ad-hoc signed and not Apple-notarized.</p>
       <p class="note"><a href="https://github.com/SpaceCoder-Kafka/codex-co2">项目与使用说明</a> · <a href="https://github.com/SpaceCoder-Kafka/codex-co2/releases/tag/v0.3.3-preview.10">直接下载 DMG</a>（手动安装可使用 DMG 的拖拽窗口）</p>
     </footer>
+    </article>
+    <article lang="en" data-language="en" hidden>
+      <span class="status">✓ Installed with Homebrew</span>
+      <h1>Next, open Codex Co²</h1>
+      <p class="intro">Real-time collaboration for Codex.</p>
+      <p>The app is already in Applications. No drag-and-drop installation is needed.</p>
+      <ol>
+        <li>
+          <h2>Try opening the app first</h2>
+          <p>Press <strong>⌘ Space</strong>, search for <strong>Codex Co²</strong>, and press Return. You can also double-click it in Finder → Applications.</p>
+          <p class="note">If the app opens normally, continue to step 3.</p>
+        </li>
+        <li>
+          <h2>If macOS blocks the app</h2>
+          <p>Click Done to dismiss the warning. Open the settings page below and scroll down to Security. Find the message about Codex Co² and click <strong>Open Anyway</strong>, then authenticate and confirm that you want to open it.</p>
+          <a class="button" href="x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension">Open Privacy &amp; Security</a>
+          <p class="note">Your browser may ask permission to open System Settings. If the button does not work, go to System Settings → Privacy &amp; Security manually. If Open Anyway is missing, try step 1 again first.</p>
+        </li>
+        <li>
+          <h2>Connect to your Codex Desktop</h2>
+          <p>Keep official Codex Desktop running, then open Codex Co². Check your display name, select the conversation you want to share, and generate an invitation.</p>
+        </li>
+      </ol>
+      <div class="trust">This experimental preview is ad-hoc signed and has not been notarized by Apple. Only allow the app if you trust its source. You must choose Open Anyway and complete authentication yourself. <a href="https://support.apple.com/en-us/102445">Read Apple's guidance</a></div>
+      <footer>
+        <p class="note">Before future updates, stop sharing and quit Co² from its menu bar menu.</p>
+        <p class="note"><a href="https://github.com/SpaceCoder-Kafka/codex-co2">Project and usage guide</a> · <a href="https://github.com/SpaceCoder-Kafka/codex-co2/releases/tag/v0.3.3-preview.10">Download the DMG</a> (manual downloads include a drag-and-drop installation window)</p>
+      </footer>
+    </article>
   </main>
+  <script>
+    (() => {
+      const storageKey = 'codex-co2-guide-language';
+      const titles = {
+        'zh-CN': 'Codex Co² 已安装 · 首次打开引导',
+        en: 'Codex Co² Installed · First-launch guide',
+      };
+      const buttons = document.querySelectorAll('[data-lang]');
+      function selectLanguage(language, remember = false) {
+        if (!Object.hasOwn(titles, language)) return;
+        document.documentElement.lang = language;
+        document.title = titles[language];
+        document.querySelectorAll('[data-language]').forEach(section => {
+          section.hidden = section.dataset.language !== language;
+        });
+        buttons.forEach(button => {
+          button.setAttribute('aria-pressed', String(button.dataset.lang === language));
+        });
+        if (remember) {
+          document.getElementById('language-status').textContent = language === 'en'
+            ? 'Language set to English.' : '已切换为中文。';
+          try { localStorage.setItem(storageKey, language); } catch {}
+        }
+      }
+      let saved;
+      try { saved = localStorage.getItem(storageKey); } catch {}
+      const preferred = (navigator.language || 'zh-CN').toLowerCase().startsWith('zh') ? 'zh-CN' : 'en';
+      selectLanguage(Object.hasOwn(titles, saved) ? saved : preferred);
+      buttons.forEach(button => {
+        button.addEventListener('click', () => selectLanguage(button.dataset.lang, true));
+      });
+    })();
+  </script>
 </body>
 </html>

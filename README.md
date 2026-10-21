@@ -21,7 +21,7 @@ brew trust --cask SpaceCoder-Kafka/tap/codex-co2
 
 The preview is **ad-hoc signed and not notarized by Apple**. If macOS blocks its first launch, attempt to open Codex Co² from Applications, then go to **System Settings → Privacy & Security → Open Anyway** and confirm. Only approve an app whose source you trust. See [Apple's guidance](https://support.apple.com/en-us/102445).
 
-Homebrew installs the application directly; it does not show the DMG's installation window. The command above opens a local first-launch guide in your default browser after successful installation. No drag-and-drop step is needed. The guide links to Privacy & Security; approval and authentication remain manual. The cask also prints the guide command.
+Homebrew installs the application directly; it does not show the DMG's installation window. The command above opens a local first-launch guide in your default browser after successful installation. The guide includes Chinese and English, with language buttons at the top; it follows your browser language initially and remembers your selection when local storage is available. No drag-and-drop step is needed. The guide links to Privacy & Security; approval and authentication remain manual. The cask also prints the guide command.
 
 If you already installed the app or used only the `brew install` portion, open the guide without reinstalling:
 
