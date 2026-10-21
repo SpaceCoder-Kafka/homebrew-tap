@@ -16,18 +16,8 @@ cask "codex-co2" do
 
   app "Codex Co².app"
 
-  # Third-party tap compatibility: structured flight steps cannot use LaunchServices.
-  # rubocop:disable Cask/InstallSteps
-  postflight do
-    system_command "/usr/bin/open",
-                   args: [cask.tap.path/"guides/homebrew.html"],
-                   must_succeed: false
-  end
-  # rubocop:enable Cask/InstallSteps
-
   caveats <<~EOS
-    安装已完成，无需拖拽。首次打开引导会在默认浏览器中显示。
-    若未自动显示，请运行：
+    安装已完成，无需拖拽。打开首次使用引导：
       open "$(brew --repository SpaceCoder-Kafka/tap)/guides/homebrew.html"
 
     This experimental preview is ad-hoc signed and not notarized by Apple.
