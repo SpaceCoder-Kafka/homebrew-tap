@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Co² 已安装 · 首次打开引导</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f6f8; color: #1c2330; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 48px 22px; line-height: 1.75; }
+    main { max-width: 760px; margin: auto; background: #fff; padding: 42px; border: 1px solid #e2e6eb; border-radius: 22px; }
+    .status { display: inline-block; color: #176544; background: #e6f5ec; padding: 4px 13px; border-radius: 30px; font-size: 14px; font-weight: 600; }
+    h1 { margin: 20px 0 6px; font-size: clamp(28px, 5vw, 36px); letter-spacing: -.8px; line-height: 1.3; }
+    .intro { margin-top: 10px; color: #586174; }
+    ol { list-style: none; counter-reset: steps; padding: 0; margin: 30px 0; }
+    li { position: relative; padding: 0 0 25px 46px; counter-increment: steps; }
+    li:last-child { padding-bottom: 0; }
+    li::before { content: counter(steps); position: absolute; top: 1px; left: 0; width: 30px; height: 30px; border-radius: 50%; background: #edf1f7; text-align: center; font-weight: 700; line-height: 30px; }
+    h2 { margin: 0 0 5px; font-size: 19px; }
+    p { margin: 5px 0 10px; }
+    .button { display: inline-block; margin-top: 8px; padding: 11px 18px; border-radius: 10px; background: #176bdf; color: #fff; font-weight: 600; text-decoration: none; }
+    a { color: #176bdf; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #83b2f5; outline-offset: 4px; }
+    .note { color: #586174; font-size: 14px; }
+    .trust { padding: 16px 18px; border-radius: 12px; background: #fff6e5; color: #704e12; font-size: 14px; }
+    footer { margin-top: 26px; border-top: 1px solid #e2e6eb; padding-top: 18px; }
+    @media (max-width: 520px) { body { padding: 18px 12px; } main { padding: 26px 20px; border-radius: 16px; } }
+    @media (prefers-color-scheme: dark) {
+      :root { background: #15191f; color: #e8edf5; }
+      main { background: #202630; border-color: #354052; }
+      .intro, .note { color: #b7c2d3; }
+      .status { background: #173e30; color: #a6e5c0; }
+      li::before { background: #354052; }
+      .trust { background: #3c311d; color: #f0d597; }
+      a { color: #9bc3ff; }
+      .button { background: #176bdf; color: #fff; }
+      footer { border-color: #354052; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="status">✓ Homebrew 安装完成</span>
+    <h1>接下来，打开 Codex Co²</h1>
+    <p class="intro">共享一条 Codex 会话，一起推进工作。</p>
+    <p>应用已放入「应用程序」，无需再次拖拽安装。</p>
+    <ol>
+      <li>
+        <h2>先尝试打开应用</h2>
+        <p>按 <strong>⌘ 空格</strong>，搜索 <strong>Codex Co²</strong> 并回车；也可以在 Finder 的「应用程序」中双击它。</p>
+        <p class="note">如果正常打开，直接继续第 3 步。</p>
+      </li>
+      <li>
+        <h2>如果 macOS 提示无法打开</h2>
+        <p>在拦截提示中点击「完成」，打开下方设置页，向下找到「安全性」，在 Codex Co² 的说明旁点击<strong>「仍要打开」</strong>，再按系统提示验证并确认打开。</p>
+        <a class="button" href="x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension">打开隐私与安全性</a>
+        <p class="note">浏览器可能询问是否允许打开“系统设置”。若按钮无效，请手动前往「系统设置 → 隐私与安全性」。未显示「仍要打开」时，请先重试第 1 步。</p>
+      </li>
+      <li>
+        <h2>连接你的 Codex Desktop</h2>
+        <p>保持官方 Codex Desktop 运行，再打开 Codex Co²，检查显示名称，选择要共享的会话并生成邀请。</p>
+      </li>
+    </ol>
+    <div class="trust">此实验预览版采用临时签名，尚未经过 Apple 公证。只有在你确认来源可信时，才为此应用放行。系统的「仍要打开」和身份验证需要由你亲自完成。<a href="https://support.apple.com/zh-cn/102445">查看 Apple 官方说明</a></div>
+    <footer>
+      <p class="note">以后更新前，先停止共享，并从 Co² 菜单栏退出应用。</p>
+      <p class="note">Installed with Homebrew — no drag-and-drop step is needed. Open Codex Co² from Applications. If blocked, review System Settings → Privacy &amp; Security → Open Anyway. This preview is ad-hoc signed and not Apple-notarized.</p>
+      <p class="note"><a href="https://github.com/SpaceCoder-Kafka/codex-co2">项目与使用说明</a> · <a href="https://github.com/SpaceCoder-Kafka/codex-co2/releases/tag/v0.3.3-preview.10">直接下载 DMG</a>（手动安装可使用 DMG 的拖拽窗口）</p>
+    </footer>
+  </main>
+</body>
+</html>
