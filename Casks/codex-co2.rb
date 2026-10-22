@@ -1,6 +1,6 @@
 cask "codex-co2" do
-  version "0.3.3,11"
-  sha256 "29237401670df916cfb9d295fd9d436e13b60c33a9431c8962a108f14f6fbfef"
+  version "0.3.3,12"
+  sha256 "51c87421f9b65be7dea97b5bd346327313837d5acfe8f640f87333c538810398"
 
   url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}-preview.#{version.csv.second}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-arm64-preview.dmg"
   name "Codex Co²"
