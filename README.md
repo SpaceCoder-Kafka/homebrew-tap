@@ -34,12 +34,18 @@ Opening the guide requires a graphical macOS session. The cask does not use depr
 
 ## Update
 
-Stop sharing and quit Codex Co² from its menu bar menu before upgrading.
+While running, Build 17 and later check for updates at most once a day in the background and offer **About → Check for updates** for manual checks. Download and installation start when you click the update button. If sharing is active, Co² asks you to end sharing before it installs and restarts. Keep official Codex Desktop running.
+
+Build 16 and earlier need one manual upgrade through Homebrew or a DMG before in-app updates are available. For a manual upgrade, stop sharing and quit Codex Co² from its menu bar menu first:
 
 ```sh
 brew update
-brew upgrade --cask SpaceCoder-Kafka/tap/codex-co2
+brew upgrade --cask --greedy SpaceCoder-Kafka/tap/codex-co2
 ```
+
+`--greedy` includes this cask even though it is marked as self-updating. The command names only Codex Co²; it does not request upgrades for other casks. See the [Homebrew upgrade options](https://docs.brew.sh/Manpage#upgrade-options-installed_formulainstalled_cask-).
+
+Build 17 起可在「关于 → 检查更新」中更新，应用运行时每天最多在后台检查一次，下载和安装由你主动触发。Build 16 及以前需先手动升级一次；手动升级前停止共享并退出 Co²，官方 Codex Desktop 保持运行。
 
 ## Uninstall
 

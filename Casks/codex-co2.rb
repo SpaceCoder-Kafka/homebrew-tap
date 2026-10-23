@@ -1,6 +1,6 @@
 cask "codex-co2" do
-  version "0.3.3,12"
-  sha256 "51c87421f9b65be7dea97b5bd346327313837d5acfe8f640f87333c538810398"
+  version "0.3.3,17"
+  sha256 "5492edd147f992e68c672d350962808a4f4242fb5c8babd31bbf63f70771d405"
 
   url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}-preview.#{version.csv.second}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-arm64-preview.dmg"
   name "Codex Co²"
@@ -8,9 +8,10 @@ cask "codex-co2" do
   homepage "https://github.com/SpaceCoder-Kafka/codex-co2"
 
   livecheck do
-    skip "Preview versions are updated manually"
+    skip "Preview releases are selected manually for this tap"
   end
 
+  auto_updates true
   depends_on arch: :arm64
   depends_on macos: :sequoia
 
@@ -30,6 +31,9 @@ cask "codex-co2" do
     3. Find Codex Co², choose Open Anyway, and confirm.
     Only allow the app if you trust its source.
 
-    Before upgrading, stop sharing and quit Codex Co² from its menu bar menu.
+    Build 17 起可在「关于 → 检查更新」中更新，运行时每天最多检查一次。
+    Build 17 and later support About > Check for updates, with daily checks while running.
+    Older builds need one manual upgrade before in-app updates are available.
+    Before a manual Homebrew or DMG upgrade, stop sharing and quit Co².
   EOS
 end
