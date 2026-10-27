@@ -1,19 +1,18 @@
 cask "codex-co2" do
-  version "0.3.3,17"
-  sha256 "5492edd147f992e68c672d350962808a4f4242fb5c8babd31bbf63f70771d405"
+  version "0.2.0,24"
+  sha256 "0b30f927ba004801b368aa7c4406750e815383c7a9df831a7245631060c67929"
 
-  url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}-preview.#{version.csv.second}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-arm64-preview.dmg"
+  url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-universal.dmg"
   name "Codex Co²"
   desc "Real-time collaboration for Codex"
   homepage "https://github.com/SpaceCoder-Kafka/codex-co2"
 
   livecheck do
-    skip "Preview releases are selected manually for this tap"
+    skip "Regular releases are selected manually for this tap"
   end
 
   auto_updates true
-  depends_on arch: :arm64
-  depends_on macos: :sequoia
+  depends_on macos: :sonoma
 
   app "Codex Co².app"
 
@@ -21,8 +20,8 @@ cask "codex-co2" do
     安装已完成，无需拖拽。打开首次使用引导：
       open "$(brew --repository SpaceCoder-Kafka/tap)/guides/homebrew.html"
 
-    This experimental preview is ad-hoc signed and not notarized by Apple.
-    Requires macOS 15 or later on Apple Silicon and an already running,
+    This experimental package is ad-hoc signed and not notarized by Apple.
+    Requires macOS 14 or later on Apple Silicon or Intel and an already running,
     compatible official Codex Desktop.
 
     If macOS blocks the first launch:
@@ -34,6 +33,9 @@ cask "codex-co2" do
     Build 17 起可在「关于 → 检查更新」中更新，运行时每天最多检查一次。
     Build 17 and later support About > Check for updates, with daily checks while running.
     Older builds need one manual upgrade before in-app updates are available.
-    Before a manual Homebrew or DMG upgrade, stop sharing and quit Co².
+    For one-time manual migration from 0.3.3, run brew update, then:
+      brew reinstall --cask SpaceCoder-Kafka/tap/codex-co2
+    手动迁移前先停止共享、关闭后台运行并退出 Co²。
+    Before manual migration, stop sharing, disable background running and quit Co².
   EOS
 end
