@@ -1,6 +1,6 @@
 cask "codex-co2" do
-  version "0.2.0,25"
-  sha256 "d27853b4aa469a4e189aef11d5f58221069642637ae3d7667caf6fe08a038a6d"
+  version "0.2.0,27"
+  sha256 "1e04838c15e3ed063737b98ff832e0fb6987fc14f47cfa3c46e7cc9f78643b19"
 
   url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-universal.dmg"
   name "Codex Co²"
@@ -26,6 +26,12 @@ cask "codex-co2" do
 
     推出已挂载的旧版 Co² 安装盘，只从“应用程序”打开当前安装。
     Eject old Co² disk images and open the current app only from Applications.
+
+    当前包优先复用已有服务，否则随管理应用以前台方式运行；退出 Co² 后暂停前台共享。
+    恢复记录默认保留，重开后内网邀请可申请恢复，仍需分享者确认。
+    This package reuses an existing service or runs with the management app.
+    Quitting Co² pauses foreground sharing. Recovery records are retained by default;
+    after reopening, intranet invitations can request recovery with host approval.
 
     If macOS blocks the first launch:
     1. Attempt to open Codex Co² from Applications.
