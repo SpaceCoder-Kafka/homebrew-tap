@@ -1,6 +1,6 @@
 cask "codex-co2" do
-  version "0.2.0,24"
-  sha256 "0b30f927ba004801b368aa7c4406750e815383c7a9df831a7245631060c67929"
+  version "0.2.0,25"
+  sha256 "d27853b4aa469a4e189aef11d5f58221069642637ae3d7667caf6fe08a038a6d"
 
   url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-universal.dmg"
   name "Codex Co²"
@@ -23,6 +23,9 @@ cask "codex-co2" do
     This experimental package is ad-hoc signed and not notarized by Apple.
     Requires macOS 14 or later on Apple Silicon or Intel and an already running,
     compatible official Codex Desktop.
+
+    推出已挂载的旧版 Co² 安装盘，只从“应用程序”打开当前安装。
+    Eject old Co² disk images and open the current app only from Applications.
 
     If macOS blocks the first launch:
     1. Attempt to open Codex Co² from Applications.

@@ -23,6 +23,8 @@ The package is **ad-hoc signed and not notarized by Apple**. If macOS blocks its
 
 Homebrew installs the application directly; it does not show the DMG's installation window. The command above opens a local first-launch guide in your default browser after successful installation. The guide includes Chinese and English, with language buttons at the top; it follows your browser language initially and remembers your selection when local storage is available. No drag-and-drop step is needed. The guide links to Privacy & Security; approval and authentication remain manual. The cask also prints the guide command.
 
+Eject any old Co² disk images, then open the current app from **Applications**. Avoid launching old copies from an installation disk or backup. 推出已挂载的旧版 Co² 安装盘，然后从「应用程序」打开当前安装；不要从旧安装盘或备份副本启动。
+
 If you already installed the app or used only the `brew install` portion, open the guide without reinstalling:
 
 ```sh
