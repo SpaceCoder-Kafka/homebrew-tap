@@ -1,8 +1,11 @@
 cask "codex-co2" do
-  version "0.4.0,36"
-  sha256 "95ce2aa57642f7a8ab4edf61c5da915a3b66127c065605eb84e19a6d19fdbd33"
+  arch arm: "arm64", intel: "x86_64"
 
-  url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-universal.dmg"
+  version "0.4.1,37"
+  sha256 arm:   "0b5c89c243a5574db1346f027421a4d84ed34ba4794a40acabdca0f85090735e",
+         intel: "ee99762910d7925edcfcbc34adce63a67349e87e6edfe5578c9780cef24c70f5"
+
+  url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-#{arch}.dmg"
   name "Codex Co²"
   desc "Real-time collaboration for Codex"
   homepage "https://github.com/SpaceCoder-Kafka/codex-co2"
@@ -42,6 +45,13 @@ cask "codex-co2" do
     Build 17 起可在「关于 → 检查更新」中更新，运行时每天最多检查一次。
     Build 17 and later support About > Check for updates, with daily checks while running.
     Older builds need one manual upgrade before in-app updates are available.
+
+    从 Universal 版本迁移到 0.4.1 分架构包，请先退出 Co²，再执行：
+      brew reinstall --cask SpaceCoder-Kafka/tap/codex-co2
+    应用数据保留；迁移后使用对应架构的更新源。
+    Existing Universal installations need one manual replacement with the matching
+    architecture package. Quit Co² and run the reinstall command above.
+    Application data is retained; subsequent updates use the matching architecture feed.
     For one-time manual migration from 0.3.3, run brew update, then:
       brew reinstall --cask SpaceCoder-Kafka/tap/codex-co2
     手动迁移前先停止共享、关闭后台运行并退出 Co²。
