@@ -48,9 +48,9 @@ Version 0.4.1 provides separate Apple Silicon and Intel packages with bundled No
 
 0.4.1 分别提供 Apple Silicon 与 Intel 包，继续内置 Node 和 cloudflared，并精简运行依赖。旧 Universal 用户需手动覆盖一次对应架构应用，保留数据；旧通用更新源已冻结。
 
-The current macOS package (0.5.0, Build 38) reuses an existing service or runs with the management app. Closing its window leaves Co² in the menu bar; quitting Co² pauses foreground sharing. Login startup is not promised. Recovery records are retained by default: after reopening, intranet invitations can request recovery at the original address and port, with host approval still required. Turning off **Sharing recovery records** in Settings revokes saved recovery eligibility; turning it back on does not restore it.
+The current macOS package (0.5.1, Build 39) reuses an existing service or runs with the management app. Closing its window leaves Co² in the menu bar; quitting Co² pauses foreground sharing. Login startup is not promised. Recovery records are retained by default: after reopening, intranet invitations can request recovery at the original address and port, with host approval still required. Turning off **Sharing recovery records** in Settings revokes saved recovery eligibility; turning it back on does not restore it.
 
-当前 macOS 包（0.5.0，Build 38）优先复用已有服务，否则随管理应用以前台方式运行。关闭窗口仍驻留菜单栏；退出 Co² 会暂停前台共享，不承诺登录后自动启动。恢复记录默认保留，重新打开后，内网邀请可在原地址和端口申请恢复，仍需分享者确认。在设置中关闭「共享恢复记录」会撤销已保存的恢复资格，再开启也不会恢复旧资格。
+当前 macOS 包（0.5.1，Build 39）优先复用已有服务，否则随管理应用以前台方式运行。关闭窗口仍驻留菜单栏；退出 Co² 会暂停前台共享，不承诺登录后自动启动。恢复记录默认保留，重新打开后，内网邀请可在原地址和端口申请恢复，仍需分享者确认。在设置中关闭「共享恢复记录」会撤销已保存的恢复资格，再开启也不会恢复旧资格。
 
 Historical Build 17 and later can migrate through the in-app updater because internal Build numbers continue increasing. For the one-time manual Homebrew migration from 0.3.3, stop sharing, turn off background running if enabled, then quit Co²; keep official Codex Desktop running:
 
