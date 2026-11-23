@@ -1,9 +1,9 @@
 cask "codex-co2" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.5.1,39"
-  sha256 arm:   "9cd4470a1c61d5e0f53ce007b0f4207d2e4d6db139358edfa8e0a99addfd99a2",
-         intel: "962838edc5f224d5a830f85317cbd469b2d8a65d956dd02d385170bead236051"
+  version "0.6.0,40"
+  sha256 arm:   "c43f879aa81f1b7005e8263148f40c9768705a0521727c6bfc673382cc42278f",
+         intel: "0f0b01695ac54fa24ff5467634e7f37b766dfb32e840e429ad4b347379ad7b6e"
 
   url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-#{arch}.dmg"
   name "Codex Co²"
