@@ -1,9 +1,9 @@
 cask "codex-co2" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.6.0,40"
-  sha256 arm:   "c43f879aa81f1b7005e8263148f40c9768705a0521727c6bfc673382cc42278f",
-         intel: "0f0b01695ac54fa24ff5467634e7f37b766dfb32e840e429ad4b347379ad7b6e"
+  version "0.6.1,41"
+  sha256 arm:   "c58996b8f24f068c14e09b710d8878f020775609cc265efd204165eb9b23a405",
+         intel: "cb3e0fb66cba7528305f6749450a9876b9369373e89b80a8351554946fc97f67"
 
   url "https://github.com/SpaceCoder-Kafka/codex-co2/releases/download/v#{version.csv.first}/Codex-Co2-#{version.csv.first}-build#{version.csv.second}-#{arch}.dmg"
   name "Codex Co²"
@@ -42,9 +42,9 @@ cask "codex-co2" do
     3. Find Codex Co², choose Open Anyway, and confirm.
     Only allow the app if you trust its source.
 
-    Build 17 起可在「关于 → 检查更新」中更新，运行时每天最多检查一次。
-    Build 17 and later support About > Check for updates, with daily checks while running.
-    Older builds need one manual upgrade before in-app updates are available.
+    从 0.6.0 或更早版本升级时，请用 Homebrew 或 DMG 手动更新一次。
+    Upgrade once via Homebrew or DMG from 0.6.0 or earlier to get the new update signing key.
+    0.6.1 起可继续使用「关于 → 检查更新」。 / Use About > Check for updates from 0.6.1 onward.
 
     从 Universal 版本迁移到分架构包，请先退出 Co²，再执行：
       brew reinstall --cask SpaceCoder-Kafka/tap/codex-co2
